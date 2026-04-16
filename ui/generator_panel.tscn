@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://c8xmqm5h7y6rn"]
+
+[ext_resource type="Script" path="res://addons/mcblockmaker/ui/generator_panel.gd" id="1_panel"]
+
+[node name="GeneratorPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_panel")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "MC GridMap 资源生成器"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="TextureSection" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/TextureSection"]
+layout_mode = 2
+text = "纹理图片 (512x512, 8x8 格子):"
+
+[node name="HBox" type="HBoxContainer" parent="VBox/TextureSection"]
+layout_mode = 2
+
+[node name="TexturePath" type="LineEdit" parent="VBox/TextureSection/HBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "选择纹理图片..."
+
+[node name="BrowseBtn" type="Button" parent="VBox/TextureSection/HBox"]
+layout_mode = 2
+text = "选择纹理"
+
+[node name="OutputSection" type="VBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/OutputSection"]
+layout_mode = 2
+text = "输出目录:"
+
+[node name="HBox" type="HBoxContainer" parent="VBox/OutputSection"]
+layout_mode = 2
+
+[node name="OutputPath" type="LineEdit" parent="VBox/OutputSection/HBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "res://gridmap_assets/"
+placeholder_text = "输出目录..."
+
+[node name="OutputBrowseBtn" type="Button" parent="VBox/OutputSection/HBox"]
+layout_mode = 2
+text = "选择目录"
+
+[node name="HSeparator2" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="TypeLegend" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBox/TypeLegend"]
+layout_mode = 2
+text = "类型图例:"
+
+[node name="SkipLabel" type="Label" parent="VBox/TypeLegend"]
+modulate = Color(0.3, 0.3, 0.3, 1)
+layout_mode = 2
+text = "灰色=跳过"
+
+[node name="NormalLabel" type="Label" parent="VBox/TypeLegend"]
+modulate = Color(0.6, 0.6, 0.6, 1)
+layout_mode = 2
+text = "白色=普通"
+
+[node name="TransLabel" type="Label" parent="VBox/TypeLegend"]
+modulate = Color(0.3, 0.5, 0.8, 1)
+layout_mode = 2
+text = "蓝色=透明"
+
+[node name="CrossLabel" type="Label" parent="VBox/TypeLegend"]
+modulate = Color(0.3, 0.7, 0.3, 1)
+layout_mode = 2
+text = "绿色=X型"
+
+[node name="GridLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "方块配置网格 (点击切换类型):"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBox"]
+custom_minimum_size = Vector2(0, 320)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 8
+
+[node name="HSeparator3" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="GenerateBtn" type="Button" parent="VBox"]
+layout_mode = 2
+text = "生成 GridMap 资源"
+
+[node name="StatusLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "请选择纹理图片，然后在网格中配置方块类型"
+autowrap_mode = 3
