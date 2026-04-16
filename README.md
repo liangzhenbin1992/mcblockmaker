@@ -87,7 +87,7 @@ gridmap_assets/
 
 ## 系统要求
 
-- Godot 4.2 或更高版本
+- Godot 4.6 或更高版本
 - Godot .NET 版本同样兼容
 
 ## 许可证
